@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Development Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              orbitron: ['"Orbitron"', 'sans-serif'],
+              exo: ['"Exo 2"', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                red: '#dc2626',
+                blue: '#3b82f6',
+                cyan: '#06b6d4',
+                purple: '#8b5cf6',
+                emerald: '#10b981',
+                amber: '#f59e0b',
+                orange: '#ea580c',
+                gold: '#d97706',
+              }
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'pulse-glow': 'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'spin-slow': 'spin 12s linear infinite',
+              'gradient-xy': 'gradient-xy 15s ease infinite',
+              'drift-slow': 'drift 60s linear infinite',
+              'drift-medium': 'drift 40s linear infinite',
+              'twinkle': 'twinkle 4s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              pulseGlow: {
+                '0%, 100%': { opacity: '1', boxShadow: '0 0 10px #dc2626' },
+                '50%': { opacity: '.5', boxShadow: '0 0 20px #dc2626' },
+              },
+              'gradient-xy': {
+                  '0%, 100%': {
+                      'background-size': '400% 400%',
+                      'background-position': 'left center'
+                  },
+                  '50%': {
+                      'background-size': '200% 200%',
+                      'background-position': 'right center'
+                  }
+              },
+              drift: {
+                '0%': { transform: 'translate(0, 0)' },
+                '100%': { transform: 'translate(-50px, -100px)' }
+              },
+              twinkle: {
+                '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+                '50%': { opacity: '1', transform: 'scale(1.2)' }
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Global Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #7c2d12; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #9a3412; 
+      }
+      
+      /* Fish Animation Path */
+      .fish-path {
+        offset-path: path('M-100,200 C100,100 300,300 500,200 S900,100 1200,200');
+        animation: swim 20s linear infinite;
+      }
+      @keyframes swim {
+        0% { offset-distance: 0%; transform: scale(0.5); opacity: 0; }
+        10% { opacity: 0.8; }
+        90% { opacity: 0.8; }
+        100% { offset-distance: 100%; transform: scale(0.5); opacity: 0; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-chartjs-2": "https://esm.sh/react-chartjs-2@^5.3.1",
+    "react-countup": "https://esm.sh/react-countup@^6.5.3",
+    "chart.js": "https://esm.sh/chart.js@^4.5.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-black text-white antialiased overflow-x-hidden selection:bg-brand-red selection:text-white">
+    <div id="root"></div>
+  </body>
+</html>
